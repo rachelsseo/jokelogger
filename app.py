@@ -16,4 +16,11 @@ id = response ['id']
 setup = response ['setup']
 punchline = response['punchline']
 
-print(id, setup, punchline)
+# print(id, setup, punchline)
+
+logging = logging.getLogger(__name__)
+logging = basicConfig(filename='joke.log', encoding='utf-8', level=logging.DEBUG) 
+# logging to this filname, encode in this language, use DEBUG when logging to make it verbose
+logging.warning('%s:%s:%s', id, setup, punchline) 
+# in each %s, there will either be an id, setup, or punchline
+
